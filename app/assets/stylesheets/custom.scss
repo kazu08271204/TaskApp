@@ -17,6 +17,7 @@ textarea {
 
 .center {
   text-align: center;
+  
 }
 
 .center h1 {
@@ -52,21 +53,56 @@ p {
 
 /* ヘッダー */
 
+#header {
+background-color: teal
+}
+
+  
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: none;
+  font-style: italic;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  
 }
 
 #logo:hover {
-  color: #fff;
+  color: #c0c0c0;
+  text-decoration: none;
+  
+}
+
+.header-list{
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.header-list:hover {
+  color: #c0c0c0 !important;
   text-decoration: none;
 }
+  
+/*center */
+#top-main {
+    background-color: rgba(255,255,255,0);
+}
+
+#top-main-title {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
+}
+
 
 /* デバッグウインドウ */
 
