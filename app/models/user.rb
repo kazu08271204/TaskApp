@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  
+  has_many :tasks, dependent: :destroy #1対多の関連性,ユーザー削除時関連するデータも同時に削除
+  
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

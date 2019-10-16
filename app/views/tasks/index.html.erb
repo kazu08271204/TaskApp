@@ -1,0 +1,14 @@
+<% provide(:title, "一覧") %>
+
+<h1>タスク一覧</h1>
+<div class="main tasks-index">
+  <div class="container">
+    <% @tasks.each do |task| %> <!-- @tasks(配列)をeachメゾットで繰り返し、処理中はブロック変数が使える -->
+      <div class="tasks-index-item">
+        <%= link_to task.content, task_path(task.id) %><!--taskモデルcontentカラム（タスク詳細）表示-->
+          
+      </div>
+    <% end %>  
+  </div>
+</div>
+
