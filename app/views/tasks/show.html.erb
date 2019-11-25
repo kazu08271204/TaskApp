@@ -1,7 +1,33 @@
-<div class="main tasks-show">
-  <div class="container">
-    <div class="tasks-show-item">
-      <p>タスク詳細　<%= @task.content %></p>
+<div class="row">
+  <h1>タスク詳細</h1>
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-bordered" id="table-task">
+      
+    <tbody>
+        <tr>
+          <th class="active col-md-2">ID</th>
+          <td class="col-md-10"><%= @task.id %></td>
+        </tr>
+        <tr>
+          <th class="active">名称</th>
+          <td><%= @task.contentname %></td>
+        </tr>
+        <tr>
+          <th class="active">詳細</th>
+          <td><%= @task.content %></td>
+        </tr>
+        <tr>
+          <th class="active">作成日</th>
+          <td><%= @task.created_at %></td>
+        </tr>
+        <tr>
+          <th class="active">更新日</th>
+          <td><%= @task.updated_at %></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+  </div>
     </div>
   </div>
-</div>
