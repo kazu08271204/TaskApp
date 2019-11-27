@@ -36,6 +36,14 @@ class TasksController < ApplicationController
      redirect_to user_tasks_url # 一覧ページ（index)にリダイレクト
     
     end
+    
+    def destroy
+      @task = @user.tasks.find(params[:id])
+      @task.destroy
+      redirect_to user_tasks_url
+    end
+    
+    
     private
     
      def task_params
