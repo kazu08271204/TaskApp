@@ -3,6 +3,8 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
     <%= form_with(model: @task, url:user_tasks_path(@user), local: true) do |f| %>
+      <!--render partial: 'ファイル名', locals: { '部分テンプレート内で使う変数': '変数に入れる値' }-->
+      <%= render partial: 'shared/error_messages', locals: { obj: @task } %>
       
       <%= f.label :"名称", class: "label-signup" %>
       <%= f.text_field :contentname, class: "form-control" %>

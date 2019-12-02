@@ -19,13 +19,16 @@ class TasksController < ApplicationController
     
     def create
     @task = @user.tasks.build(task_params)
-    @task.save
-      if flash[:success] = "タスクを新規作成しました。"
-      redirect_to user_tasks_url @user
+    
+      if @task.save 
+      flash[:success] = "タスクを新規作成しました。"
+      redirect_to user_tasks_url 
       else
-      render :new
+      #失敗の場合      
+      render "new"
       end
     end  
+   
     def  edit
       @task = @user.tasks.find(params[:id])
     end
