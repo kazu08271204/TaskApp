@@ -1,0 +1,17 @@
+ja: #頭でインデントそろえる
+  activerecord:
+    models: #モデル
+      user: ユーザー #models複数の場合インデント注意（そろえる）
+      task: タスク 
+    attributes: #属性
+        user: #モデル
+          id: ID #カラム
+          name: 名前
+          email: メールアドレス
+          password: パスワード
+          password_confirmation: パスワード再入力
+          created_at: 作成日
+          updated_at: 更新日
+        task: #モデル
+          contentname: 名称 #カラム
+          content: 詳細
