@@ -3,6 +3,6 @@ class Task < ApplicationRecord
   
   #presence(存在しているか？)がtrueの場合にのみデータが保存される,〇文字以内か？
   validates :contentname, presence: true, length: { maximum: 20 }
-  validates :content, presence: true, length: { maximum: 30}
+  validates :content, presence: true, length: { maximum: 100 }
 end
 
