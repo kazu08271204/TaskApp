@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   #before_action :set_user
-  before_action :logged_in_user, only:[:index, :show, :edit, :update]
+  before_action :logged_in_user, only:[:index, :show, :edit, :update, :destroy]
   
   
   def index
     @users = User.all
     #全てのユーザーを代入した複数形であるため@users
+    #ページネーションを判定できるオブジェクトに置き換え
+    @users = User.paginate(page: params[:page])
+    #paginateではキーが:pageで値がページ番号のハッシュを引数にとる
+    #User.paginateは:pageパラメータに基づき、データベースからひとかたまりのデータを取得
   end
   
   
@@ -32,7 +36,8 @@ class UsersController < ApplicationController
   def edit #特定データの取得
     @user = User.find(params[:id])
   end
-  
+
+
   def update
      @user = User.find(params[:id]) 
     if@user.update(user_params)
@@ -41,11 +46,16 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-    
-    
   end
   
-  
+  def destroy
+    @user = User.find(params[:id]) 
+    @user.destroy
+    flash[:success] = "#{@user.name}のデータを削除しました。"
+    #ActiveRecordのdestroyメソッドを使ってデータを削除しユーザー一覧ページにリダイレクト
+    redirect_to users_url
+  end
+     
   
   
   

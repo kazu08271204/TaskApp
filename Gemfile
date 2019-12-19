@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '~> 5.1.6'
-gem 'rails-i18n' # 今回はこのgemを追加しています。
+gem 'rails-i18n' #日本語化
 gem 'bcrypt'
 gem 'faker'
 gem 'bootstrap-sass'
+gem 'will_paginate' #ページネーション機能を追加
+gem 'bootstrap-will_paginate' #デザインをお手軽に良くする
 gem 'puma',         '~> 3.7'
 gem 'sass-rails',   '~> 5.0'
 gem 'uglifier',     '>= 1.3.0'
