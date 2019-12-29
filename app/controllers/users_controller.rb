@@ -36,8 +36,7 @@ class UsersController < ApplicationController
   def edit #特定データの取得
     @user = User.find(params[:id])
   end
-
-
+  
   def update
      @user = User.find(params[:id]) 
     if@user.update(user_params)
@@ -48,14 +47,14 @@ class UsersController < ApplicationController
     end
   end
   
-  def destroy
+   def destroy
     @user = User.find(params[:id]) 
     @user.destroy
     flash[:success] = "#{@user.name}のデータを削除しました。"
     #ActiveRecordのdestroyメソッドを使ってデータを削除しユーザー一覧ページにリダイレクト
     redirect_to users_url
-  end
-     
+   end
+  
   
   
   
@@ -76,5 +75,10 @@ class UsersController < ApplicationController
       flash[:danger] = "ログインしてください。"
       redirect_to login_url
       end
+    end
+    
+    #アクセスしたユーザが現在ログインしているユーザか確認します
+    def correct_user
+      redirect_to(root_url) unless current_user?(@user)
     end
 end
