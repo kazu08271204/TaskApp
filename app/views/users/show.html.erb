@@ -5,39 +5,22 @@
   <div class="col-md-6 col-md-offset-3">
     <table class="table table-bordered" id="table-user">
       <tbody><tr>
-        <th class="active col-md-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ID</font></font></th>
-        <td class="col-md-9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></td>
+        <th class="success col-md-3"><%= User.human_attribute_name :id %></th>
+        <td class="col-md-9"><%= @user.id %></td>
       </tr>
       <tr>
-        <th class="active"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">名前</font></font></th>
-        <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ゲストユーザー</font></font></td>
+        <th class="success"><%= User.human_attribute_name :name%></th>
+        <td><%= @user.name %></td>
       </tr>
       <tr>
-        <th class="active"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">メールアドレス</font></font></th>
-        <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">guest@email.com</font></font></td>
+        <th class="success"><%= User.human_attribute_name :email %></th>
+        <td><%= @user.email %></td>
       </tr>
       <tr>
-        <th class="active"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">作成日</font></font></th>
-        <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2019/07/08 23:21</font></font></td>
+        <th class="success"><%= User.human_attribute_name :created_at %></th>
+        <td><%= @user.created_at %></td>
       </tr>
     </tbody></table>
   </div>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th><%= User.human_attribute_name :name %></th>
-          <th><%= User.human_attribute_name :email %></th>
-          <th><%= User.human_attribute_name :created_at %></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td><%= @user.name %></td>
-          <td><%= @user.email %></td>
-          <td><%= @user.created_at %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>    
-</div>
+  
+    
