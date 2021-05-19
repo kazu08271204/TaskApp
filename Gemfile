@@ -7,7 +7,7 @@ gem 'faker'
 gem 'bootstrap-sass'
 gem 'will_paginate' #ページネーション機能を追加
 gem 'bootstrap-will_paginate' #デザインをお手軽に良くする
-gem 'puma',         '~> 3.7'
+gem 'puma',         '~> 4.3'
 gem 'sass-rails',   '~> 5.0'
 gem 'uglifier',     '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
